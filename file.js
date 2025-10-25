@@ -77,11 +77,14 @@ regionSelect.addEventListener("change", () => {
 //  dark mode 
 let darkMode = false;
 darkBtn.addEventListener("click", () => {
+  var flag = document.getElementById("flags")
   darkMode = !darkMode;
   document.body.style.backgroundColor = darkMode ? "#1e1e1e" : "rgb(237, 237, 237)";
   document.body.style.color = darkMode ? "white" : "black";
   document.querySelectorAll(".cards").forEach((card) => {
+     flag.style.backgroundColor = darkMode ? "#2a2a2a" : "white";
     card.style.backgroundColor = darkMode ? "#2a2a2a" : "white";
+    
     card.style.color = darkMode ? "white" : "black";
   });
   darkBtn.textContent = darkMode ? " ☀︎ Light Mode" : "⏾ Dark Mode";
@@ -89,3 +92,4 @@ darkBtn.addEventListener("click", () => {
 
 // Load all countries on page start
 getCountries();
+
